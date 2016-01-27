@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HeaderAndFooterRecyclerView</string>
+    <string name="text_loading">loading...</string>
+    <string name="text_load_succeed">load succeed</string>
+    <string name="text_load_fail">load fail</string>
+    <string name="text_loaded_All">load all</string>
+</resources>
