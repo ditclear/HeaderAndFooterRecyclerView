@@ -21,11 +21,11 @@ import com.wang.avi.AVLoadingIndicatorView;
  */
 public class BasePtrBtlActivity extends Activity implements LoadmoreCallback, RefreshCallback {
 
-    boolean isLoadingMoreData;//正在加载更多
-    boolean isRefreshingData;//正在刷新
-    boolean isLoadedAllData;//已经加载完所有数据
-    View footerView;//listview 尾部
-    private TextView tv_loading;//加载文本控件
+    boolean isLoadingMoreData;
+    boolean isRefreshingData;
+    boolean isLoadedAllData;
+    View footerView;
+    private TextView tv_loading;
 
     protected SwipeRefreshLayout refreshLayout;
     private AVLoadingIndicatorView progress_loading;
