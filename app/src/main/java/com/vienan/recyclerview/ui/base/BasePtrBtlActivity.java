@@ -33,7 +33,7 @@ public abstract class BasePtrBtlActivity extends AppCompatActivity implements Lo
     protected View footerView;
     private TextView tv_loading;
 
-    protected Toolbar toobar;
+    protected Toolbar toolbar;
     protected SwipeRefreshLayout refreshLayout;
     private AVLoadingIndicatorView progress_loading;
 
@@ -48,9 +48,9 @@ public abstract class BasePtrBtlActivity extends AppCompatActivity implements Lo
     }
 
     protected void initToolbar(int id, int subTitleId) {
-        toobar = (Toolbar) findViewById(id);
-        toobar.setSubtitle(getResources().getString(subTitleId));
-        setSupportActionBar(toobar);
+        toolbar = (Toolbar) findViewById(id);
+        toolbar.setSubtitle(getResources().getString(subTitleId));
+        setSupportActionBar(toolbar);
     }
 
     protected void initRefreshView(int id) {
