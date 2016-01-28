@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/orange">
+    android:background="@color/main_green">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+        android:layout_marginTop="20dp"
         android:textSize="18sp"
-        android:text="header Item one"/>
+        android:text="hello world!"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -16,5 +17,6 @@
         android:gravity="center_horizontal"
         android:textSize="18sp"
         android:layout_marginTop="3dp"
+        android:layout_marginBottom="20dp"
         android:text="this is header"/>
 </LinearLayout>

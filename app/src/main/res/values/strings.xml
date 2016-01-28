@@ -4,4 +4,7 @@
     <string name="text_load_succeed">load succeed</string>
     <string name="text_load_fail">load fail</string>
     <string name="text_loaded_All">load all</string>
+    <string name="LinearLayout">LinearLayout</string>
+    <string name="GridLayout">GridLayout</string>
+    <string name="StaggeredGridLayout">StaggeredGridLayout</string>
 </resources>

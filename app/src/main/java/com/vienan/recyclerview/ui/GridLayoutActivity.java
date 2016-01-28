@@ -1,19 +1,15 @@
 package com.vienan.recyclerview.ui;
 
-import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 
 import com.vienan.recyclerview.R;
-import com.vienan.recyclerview.adapter.LinearLayoutAdapter;
+import com.vienan.recyclerview.adapter.GridLayoutAdapter;
 import com.vienan.recyclerview.model.HeaderObject;
 import com.vienan.recyclerview.model.ItemObject;
 import com.vienan.recyclerview.ui.base.BasePtrBtlActivity;
@@ -24,12 +20,16 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class MainActivity extends BasePtrBtlActivity {
+/**
+ * Created by vienan on 16/1/28.
+ */
+public class GridLayoutActivity extends BasePtrBtlActivity {
+
 
     @Bind(R.id.recyclerView)
     RecyclerView recyclerView;
 
-    LinearLayoutAdapter adapter;
+    GridLayoutAdapter adapter;
     List<ItemObject> itemList;
 
     @Override
@@ -38,31 +38,22 @@ public class MainActivity extends BasePtrBtlActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        initToolbar(R.id.toolbar, R.string.LinearLayout);
+        initToolbar(R.id.toolbar, R.string.GridLayout);
 
         initRefreshView(R.id.swipe_refresh_layout);
 
         setupRecyclerView();
-
-
     }
 
-
-
-
     private void setupRecyclerView() {
+
         if (itemList == null) {
             itemList = createItemList();
         }
 
-        adapter = new LinearLayoutAdapter(this, footerView);
+        adapter = new GridLayoutAdapter(this, footerView);
 
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this){
-            @Override
-            protected int getExtraLayoutSpace(RecyclerView.State state) {
-                return 300;
-            }
-        };
+        GridLayoutManager layoutManager = new GridLayoutManager(this,2);
 
         SpacesItemDecoration decoration = new SpacesItemDecoration((int) getResources().getDimension(R.dimen.item_decoration));
 
@@ -109,8 +100,8 @@ public class MainActivity extends BasePtrBtlActivity {
         if (itemList != null) {
             itemList.add(new ItemObject("loaded one"));
             itemList.add(new ItemObject("loaded two"));
-            onLoadmoreSucced("load succeed");
             adapter.notifyItemRangeInserted(itemList.size() - 1, 2);
+            onLoadmoreSucced("load succeed");
             return;
         }
         onLoadmoreFail("load failed");
@@ -151,7 +142,7 @@ public class MainActivity extends BasePtrBtlActivity {
 
     private List<ItemObject> createItemList() {
         List<ItemObject> itemObjects = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             itemObjects.add(new ItemObject("Item " + i));
         }
         return itemObjects;

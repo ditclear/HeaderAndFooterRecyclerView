@@ -22,10 +22,7 @@ public abstract class BaseNiceRecyclerViewAdapter<VH extends RecyclerView.ViewHo
 
     @Override
     public int getItemCount() {
-        int addSize=1;
-        if (hasHeader()) {
-            addSize = 2;
-        }
+        int addSize=hasHeader()?2:1;
         return items == null ? addSize : items.size() + addSize;
     }
 
@@ -40,11 +37,11 @@ public abstract class BaseNiceRecyclerViewAdapter<VH extends RecyclerView.ViewHo
         return viewType;
     }
 
-    private boolean isHeaderPosition(int position) {
+    protected boolean isHeaderPosition(int position) {
         return hasHeader() && position == 0;
     }
 
-    private boolean isFooterPosition(int position) {
+    protected boolean isFooterPosition(int position) {
         return items == null || position == getItemCount()-1;
     }
 

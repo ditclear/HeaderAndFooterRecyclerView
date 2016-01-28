@@ -19,15 +19,15 @@ import com.vienan.recyclerview.model.ItemObject;
 /**
  * Created by vienan on 16/1/27.
  */
-public class MainActivityAdapter extends BaseNiceRecyclerViewAdapter<RecyclerView.ViewHolder, HeaderObject, ItemObject, FooterObject> {
+public class LinearLayoutAdapter extends BaseNiceRecyclerViewAdapter<RecyclerView.ViewHolder, HeaderObject, ItemObject, FooterObject> {
 
     private Context context;
     private LayoutInflater inflater;
-    View footerView;
-    public MainActivityAdapter(Context context,View footerView) {
+    private View footerView;
+    public LinearLayoutAdapter(Context context, View footerView) {
         this.context=context;
         this.footerView=footerView;
-        inflater=LayoutInflater.from(context);
+        this.inflater=LayoutInflater.from(context);
 
     }
 
